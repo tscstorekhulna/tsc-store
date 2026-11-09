@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#146c43">
+<title>TSC Store | আপনার প্রতিদিনের বাজার</title>
+<style>
+:root{--green:#146c43;--green2:#0e5132;--mint:#eaf6ef;--ink:#17231c;--muted:#66756b;--line:#e5ece7;--bg:#f7faf8;--white:#fff;--orange:#f4a340}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali","Noto Sans",sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 20px}
+.top{background:var(--green2);color:#eaf6ef;font-size:13px;padding:9px 0}.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:13px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;font-size:18px;letter-spacing:-1px}.brand b{display:block;font-size:20px;letter-spacing:.3px}.brand small{color:var(--muted);font-size:11px}.links{display:flex;gap:24px;color:#405047;font-size:14px}.cart{border:0;background:var(--green);color:#fff;padding:11px 16px;border-radius:11px;font-weight:700;cursor:pointer}
+.hero{padding:52px 0 34px;background:linear-gradient(115deg,#eaf6ef 0%,#f7faf8 62%,#fff 100%)}.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:28px}.eyebrow{color:var(--green);font-weight:800;font-size:13px;letter-spacing:.5px}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.15;margin:12px 0 14px;letter-spacing:-1px}.hero p{color:#56665c;line-height:1.8;max-width:590px;margin:0 0 22px}.actions{display:flex;gap:11px;flex-wrap:wrap}.primary,.secondary{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:12px;font-weight:750}.primary{background:var(--green);color:#fff}.secondary{border:1px solid #cbd9cf;background:#fff;color:var(--green)}
+.hero-art{min-height:250px;border-radius:26px;background:linear-gradient(145deg,#176e45,#0d4b30);color:#fff;padding:28px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 40px #145b3520}.hero-art .big{font-size:54px}.hero-art h2{font-size:25px;margin:12px 0 5px}.hero-art p{color:#d7eee0;margin:0;font-size:14px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}.chip{background:#ffffff20;border:1px solid #ffffff30;padding:7px 10px;border-radius:30px;font-size:12px}
+section{padding:42px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section-head h2{margin:0;font-size:27px}.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.category{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 10px;text-align:center}.category .emoji{font-size:29px}.category b{display:block;font-size:13px;margin-top:9px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.product{background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px;display:flex;flex-direction:column;min-height:190px}.product .picon{height:72px;border-radius:13px;background:var(--mint);display:grid;place-items:center;font-size:36px}.product h3{font-size:15px;margin:12px 0 4px}.product small{color:var(--muted)}.product .bottom{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px;gap:8px}.price{font-size:12px;color:var(--green);font-weight:750}.add{border:0;background:var(--mint);color:var(--green);border-radius:9px;padding:8px 11px;font-weight:800;cursor:pointer}
+.feature{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature-item{display:flex;gap:13px;align-items:flex-start}.feature-item .emoji{font-size:26px}.feature-item b{display:block;margin-bottom:4px}.feature-item span{font-size:13px;color:var(--muted);line-height:1.6}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.about-card{background:var(--mint);border-radius:22px;padding:26px}.about-card h3{margin-top:0;font-size:22px}.about-card p{color:#526358;line-height:1.8;font-size:14px}.contact{background:#123f2b;color:#fff;padding:34px 0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact p{color:#d2e5d9;line-height:1.7}.contact .secondary{color:var(--green);border:0}
+footer{background:#0d3021;color:#c9dbd0;padding:18px 0;font-size:12px}.footerline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cart-panel{position:fixed;right:18px;bottom:18px;width:min(360px,calc(100% - 36px));background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 15px 45px #102a1c30;padding:18px;z-index:10;display:none}.cart-panel.show{display:block}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-head button{border:0;background:#edf4ef;border-radius:8px;padding:6px 10px;cursor:pointer}.cart-items{max-height:190px;overflow:auto;margin:12px 0}.cart-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}.cart-note{font-size:12px;color:var(--muted);line-height:1.6}.copy{width:100%;border:0;background:var(--green);color:#fff;padding:12px;border-radius:10px;font-weight:800;cursor:pointer}
+@media(max-width:800px){.links{display:none}.hero-grid,.about,.contact-grid{grid-template-columns:1fr}.categories{grid-template-columns:repeat(3,1fr)}.products{grid-template-columns:repeat(2,1fr)}.feature-grid{grid-template-columns:1fr}.hero{padding-top:34px}.hero-art{min-height:210px}}
+@media(max-width:430px){.wrap{padding:0 14px}.nav{height:66px}.brand b{font-size:17px}.logo{width:40px;height:40px}.categories{gap:8px}.category{padding:14px 5px}.category b{font-size:11px}.products{gap:9px}.product{padding:11px}.product h3{font-size:13px}.section-head h2{font-size:23px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>📍 পশ্চিম বানিয়াখামার মেইন রোড, TSC মোড়, খুলনা</span><span>আপনার প্রতিদিনের প্রয়োজনীয় পণ্য, এক ঠিকানায়</span></div></div>
+<header><div class="wrap nav">
+ <a class="brand" href="#"><span class="logo">TSC</span><span><b>TSC STORE</b><small>Grocery • Daily Essentials</small></span></a>
+ <nav class="links"><a href="#categories">ক্যাটাগরি</a><a href="#products">পণ্য</a><a href="#about">আমাদের সম্পর্কে</a><a href="#contact">যোগাযোগ</a></nav>
+ <button class="cart" onclick="toggleCart()">🛒 কার্ট <span id="count">0</span></button>
+</div></header>
+<main>
+<section class="hero"><div class="wrap hero-grid">
+ <div><div class="eyebrow">WELCOME TO TSC STORE</div><h1>আপনার প্রতিদিনের বাজার<br>এখন আরও সহজ</h1><p>মুদি ও নিত্যপ্রয়োজনীয় পণ্য, বেবি কেয়ার, পার্সোনাল কেয়ার, স্টেশনারি এবং আরও অনেক কিছু—আপনার কাছের বিশ্বস্ত দোকান TSC Store-এ স্বাগতম।</p><div class="actions"><a class="primary" href="#products">পণ্য দেখুন <span>　→</span></a><a class="secondary" href="#contact">দোকানের ঠিকানা</a></div></div>
+ <div class="hero-art"><div><div class="big">🛍️</div><h2>Everything you need,<br>close to home.</h2><p>সুবিধাজনক কেনাকাটা, পরিচিত সেবা।</p></div><div class="chips"><span class="chip">Grocery</span><span class="chip">Baby Care</span><span class="chip">Stationery</span><span class="chip">Daily Needs</span></div></div>
+</div></section>
+<section id="categories"><div class="wrap"><div class="section-head"><div><h2>আমাদের ক্যাটাগরি</h2><p>আপনার প্রয়োজনীয় পণ্য খুঁজে নিন সহজেই</p></div></div>
+<div class="categories">
+ <a class="category" href="#products"><div class="emoji">🛒</div><b>মুদি ও FMCG</b></a><a class="category" href="#products"><div class="emoji">🍼</div><b>বেবি কেয়ার</b></a><a class="category" href="#products"><div class="emoji">🧴</div><b>কসমেটিকস ও কেয়ার</b></a><a class="category" href="#products"><div class="emoji">📚</div><b>স্টেশনারি</b></a><a class="category" href="#products"><div class="emoji">🥤</div><b>পানীয় ও ফ্রোজেন</b></a><a class="category" href="#contact"><div class="emoji">📱</div><b>ডিজিটাল সেবা</b></a>
+</div></div></section>
+<section id="products"><div class="wrap"><div class="section-head"><div><h2>জনপ্রিয় পণ্য</h2><p>নমুনা পণ্য তালিকা—দাম ও স্টক দোকান থেকে নিশ্চিত করুন</p></div></div>
+<div class="products" id="productGrid"></div></div></section>
+<section class="feature"><div class="wrap feature-grid">
+ <div class="feature-item"><div class="emoji">🏪</div><div><b>আপনার পাশের দোকান</b><span>পশ্চিম বানিয়াখামার, TSC মোড়, খুলনা।</span></div></div>
+ <div class="feature-item"><div class="emoji">🤝</div><div><b>পরিচিত ও আন্তরিক সেবা</b><span>প্রতিদিনের প্রয়োজনীয় কেনাকাটায় সহজ সমাধান।</span></div></div>
+ <div class="feature-item"><div class="emoji">📲</div><div><b>সহজে অর্ডারের ব্যবস্থা</b><span>কার্টে পণ্য যোগ করে অর্ডারের তালিকা তৈরি করুন।</span></div></div>
+</div></section>
+<section id="about"><div class="wrap about"><div><div class="eyebrow">ABOUT TSC STORE</div><h2 style="font-size:30px;margin:10px 0">আপনার এলাকার নিত্যপ্রয়োজনীয় পণ্যের ঠিকানা</h2><p style="color:#5e6d63;line-height:1.85">TSC Store একটি স্থানীয় গ্রোসারি ও কনভিনিয়েন্স স্টোর। দৈনন্দিন বাজার থেকে শুরু করে পরিবারের প্রয়োজনীয় বিভিন্ন পণ্য এবং ডিজিটাল সেবা—সবকিছু এক জায়গায় পৌঁছে দেওয়াই আমাদের লক্ষ্য।</p></div><div class="about-card"><h3>কেন TSC Store?</h3><p>✔ নিত্যপ্রয়োজনীয় পণ্যের বিভিন্ন ক্যাটাগরি<br>✔ মুদি, বেবি কেয়ার ও স্টেশনারি<br>✔ bKash, Nagad ও Flexiload সেবা<br>✔ স্থানীয় ক্রেতাদের জন্য সহজ যোগাযোগ</p></div></div></section>
+<section class="contact" id="contact"><div class="wrap contact-grid"><div><div class="eyebrow" style="color:#a9e2bf">VISIT OUR STORE</div><h2 style="font-size:29px;margin:9px 0">TSC Store-এ চলে আসুন</h2><p>পশ্চিম বানিয়াখামার মেইন রোড,<br>TSC মোড়, খুলনা, বাংলাদেশ।</p><a class="secondary" href="https://www.google.com/maps/search/?api=1&query=TSC+Mor+West+Bania+Khamar+Khulna" target="_blank" rel="noopener">📍 Google Maps-এ খুঁজুন</a></div><div><h3>যোগাযোগ ও অর্ডার</h3><p>ফোন, WhatsApp নম্বর এবং Facebook পেজের লিংক যুক্ত হলে এখান থেকে সরাসরি যোগাযোগ ও অর্ডার নেওয়া যাবে।</p><p><b>খোলার সময়:</b> দোকানের সময়সূচি শিগগিরই যুক্ত হবে।</p></div></div></section>
+</main>
+<footer><div class="wrap footerline"><span>© 2026 TSC Store. All rights reserved.</span><span>Made for your everyday shopping.</span></div></footer>
+<div class="cart-panel" id="cartPanel"><div class="cart-head"><b>আপনার অর্ডার তালিকা</b><button onclick="toggleCart()">বন্ধ করুন ✕</button></div><div class="cart-items" id="cartItems">এখনো কোনো পণ্য যোগ করা হয়নি।</div><p class="cart-note">এটি প্রাথমিক ওয়েবসাইট ডেমো। পণ্যের দাম, স্টক ও অর্ডার নিশ্চিত করতে দোকানের সঙ্গে যোগাযোগ করুন।</p><button class="copy" onclick="copyOrder()">অর্ডার তালিকা কপি করুন</button></div>
+<script>
+const products=[
+ {name:"চাল",cat:"মুদি ও FMCG",icon:"🍚"},{name:"ডাল",cat:"মুদি ও FMCG",icon:"🫘"},{name:"সয়াবিন তেল",cat:"মুদি ও FMCG",icon:"🫗"},{name:"চা ও বিস্কুট",cat:"মুদি ও FMCG",icon:"🍪"},
+ {name:"দুধ ও শিশুখাদ্য",cat:"বেবি কেয়ার",icon:"🍼"},{name:"বেবি কেয়ার পণ্য",cat:"বেবি কেয়ার",icon:"🧸"},{name:"সাবান ও শ্যাম্পু",cat:"পার্সোনাল কেয়ার",icon:"🧴"},{name:"টুথপেস্ট ও টিস্যু",cat:"পার্সোনাল কেয়ার",icon:"🪥"},
+ {name:"খাতা ও কলম",cat:"স্টেশনারি",icon:"📚"},{name:"স্কুল স্টেশনারি",cat:"স্টেশনারি",icon:"✏️"},{name:"জুস ও পানীয়",cat:"পানীয়",icon:"🧃"},{name:"নুডলস ও স্ন্যাকস",cat:"স্ন্যাকস",icon:"🍜"}
+];
+let cart=[];
+const grid=document.getElementById('productGrid');
+products.forEach((p,i)=>{const el=document.createElement('article');el.className='product';el.innerHTML=`<div class="picon">${p.icon}</div><h3>${p.name}</h3><small>${p.cat}</small><div class="bottom"><span class="price">দাম জানতে যোগাযোগ</span><button class="add" onclick="addItem(${i})">+ যোগ করুন</button></div>`;grid.appendChild(el)});
+function addItem(i){cart.push(products[i]);document.getElementById('count').textContent=cart.length;document.getElementById('cartItems').innerHTML=cart.map((p,n)=>`<div class="cart-row"><span>${n+1}. ${p.name}</span><b>${p.icon}</b></div>`).join('');document.getElementById('cartPanel').classList.add('show')}
+function toggleCart(){document.getElementById('cartPanel').classList.toggle('show')}
+function copyOrder(){if(!cart.length){alert('আগে পণ্য যোগ করুন');return}const msg='TSC Store-এর জন্য আমার পণ্যের তালিকা:\\n'+cart.map((p,i)=>(i+1)+'. '+p.name).join('\\n')+'\\n\\nদয়া করে দাম ও প্রাপ্যতা জানাবেন।';if(navigator.clipboard){navigator.clipboard.writeText(msg).then(()=>alert('অর্ডার তালিকা কপি হয়েছে। এখন দোকানে পাঠাতে পারবেন।')).catch(()=>prompt('অর্ডার তালিকা কপি করুন:',msg))}else{prompt('অর্ডার তালিকা কপি করুন:',msg)}}
+</script>
+</body></html>
